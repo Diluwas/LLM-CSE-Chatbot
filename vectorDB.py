@@ -19,3 +19,8 @@ class VectoreDB:
 
     def add_to_vector_db(self, splitted_docs):
         self.vector_store.add_documents(splitted_docs)
+
+    def perform_similarity_search(self, query):
+        print(query)
+        results = self.vector_store.similarity_search(query=query, k=5)
+        return results

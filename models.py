@@ -25,5 +25,4 @@ class Models:
             openai_api_version= self.configs.azure_openai_version,
             model = self.configs.text_embedding_model_name,
             azure_ad_token_provider = self.token_provider
-        )
-        
+        )        

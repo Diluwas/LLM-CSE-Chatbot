@@ -16,16 +16,22 @@ def main():
     vecrorDB.int_vectore_db(ai_models.embedding_model)
 
     #load documents and create chunks
-    document_loader = Data_loader(configs)
-    document_loader.init_text_splitter()
-    splits = document_loader.load_and_process_pdfs()
+    # document_loader = Data_loader(configs)
+    # document_loader.init_text_splitter()
+    # splits = document_loader.load_and_process_pdfs()
 
-    #Compute embeddings vectores and add to vector DB
-    vecrorDB.add_to_vector_db(splits)
+    # Compute embeddings vectores and add to vector DB
+    # vecrorDB.add_to_vector_db(splits)
+    query = "What is stock market?"
+    query_vector = ai_models.embedding_model.embed_query(query)
+    # print("query_vector", query_vector, len(query_vector))
 
-    #prompting
+    results = vecrorDB.perform_similarity_search(query=query)
+    # print("results =", results)
+    context = "\n\n".join(doc.page_content for doc in results)
+    # prompting
     prompt_manager = Prompt_Manager(configs.promt_template)
-    prompt_manager.ask_question()
+    prompt_manager.ask_question(context_data=context, question_data=query, llm=ai_models.llm_model)
 
 if __name__ == "__main__":
     main()
