@@ -4,5 +4,6 @@ langchain_text_splitters
 langchain-community
 azure-identity
 pypdf
+streamlit
 
 
