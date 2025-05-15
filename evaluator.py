@@ -28,7 +28,6 @@ from azure.identity import DefaultAzureCredential, get_bearer_token_provider
 def main():
 
     configs = Configs()
-    os.environ["AZURE_OPENAI_API_KEY"] = ""
 
     # other configuration
     azure_config = {
