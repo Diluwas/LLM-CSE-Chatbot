@@ -5,5 +5,5 @@ langchain-community
 azure-identity
 pypdf
 streamlit
-
-
+sentence_transformers
+faiss-cpu

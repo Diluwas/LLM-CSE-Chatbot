@@ -3,6 +3,7 @@ class Configs:
         self.azure_endpoint = "https://rag-models-dilun.openai.azure.com/"
         self.azure_llm_deployment = "gpt-4o"
         self.azure_embedding_model_deployment = "text-embedding-3-large"
+        self.embedding_length = 3072
         self.azure_openai_version = "2024-12-01-preview"
         self.text_embedding_model_name = "text-embedding-3-large"
         self.llm_model_name = "gpt-4o"
@@ -18,3 +19,4 @@ class Configs:
         Question: {question}
 
         Helpful Answer:"""
+        self.db_file_path="./index"
