@@ -28,8 +28,7 @@ from azure.identity import DefaultAzureCredential, get_bearer_token_provider
 def main():
 
     configs = Configs()
-    # token_provider = get_bearer_token_provider(DefaultAzureCredential(), "https://cognitiveservices.azure.com/.default")
-    os.environ["AZURE_OPENAI_API_KEY"] = "3JrBYrw9b4zFsLn24tUAgciqxztiQk9z2TTWeqwuEL5mBPsilgEUJQQJ99BEACYeBjFXJ3w3AAABACOGZyo0"
+    os.environ["AZURE_OPENAI_API_KEY"] = ""
 
     # other configuration
     azure_config = {
