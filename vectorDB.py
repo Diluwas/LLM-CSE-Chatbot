@@ -9,8 +9,6 @@ class VectoreDB:
         self.index = faiss.IndexHNSWFlat(self.configs.embedding_length, 32)
 
     def int_vectore_db(self, embedding_function):
-        embedding = embedding_function.embed_query("test")
-        print("Embedding length= " ,len(embedding))  # Should print 1536
         self.vector_store = FAISS(
             embedding_function = embedding_function,
             index = self.index,
